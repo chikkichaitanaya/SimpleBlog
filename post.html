@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Post</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="new-post.html">New Post</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 id="post-title"></h2>
+        <p id="post-author"></p>
+        <p id="post-content"></p>
+    </main>
+
+    <script>
+        // Load the blog post from localStorage
+        const post = JSON.parse(localStorage.getItem('currentPost'));
+
+        // Display the blog post content
+        document.getElementById('post-title').innerHTML = post.title;
+        document.getElementById('post-author').innerHTML = `by ${post.author}`;
+        document.getElementById('post-content').innerHTML = post.content;
+    </script>
+</body>
+</html>
